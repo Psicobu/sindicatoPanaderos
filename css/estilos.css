@@ -1,0 +1,379 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+body {
+    background-image: url(https://image.freepik.com/foto-gratis/surtido-pan-horneado_87742-761.jpg);
+    background-size: cover;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.encabezado {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.863);
+
+}
+
+.logo {
+    width: 10%;
+    padding: 10px;
+}
+
+h1 {
+    color: #4F9532;
+    padding: 20px 70px 5px 0px;
+    text-align: center;
+    font-size: 46px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.863);
+}
+
+/* media queries encabezado */
+
+@media (max-width: 768px) {
+    .encabezado {
+        display: block;
+        text-align: center;
+    }
+
+    .encabezado h1 {
+        padding: 0;
+        margin-top: 10px;
+        font-size: 28px;
+    }
+
+    .logo  {
+        margin-top: 20px;
+        width: 50%;
+    }
+
+    .menu {
+        display: block;
+        text-align: center;
+    }
+
+    .menu li{
+        border-bottom: 1px solid black;
+    }
+}
+
+.menu li {
+    transition: background-color .5s ease;
+}
+
+.menu > li > a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 15px 20px;
+    font-size: 32px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.subMenu {
+    display: none;
+    list-style: none;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    transition: display 3000ms ease;
+    background-color: rgba(255, 255, 255, 0.863);
+}
+
+/* media queries subMenu */
+@media (max-width: 768px) {
+    .subMenu {
+        position: static;
+    }
+}
+
+.subMenu li a {
+    display: block;
+    padding: 10px;
+    color: black;
+    font-size: 24px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.menuSelected {
+    background-color: rgba(248, 190, 55, 0.836);
+}
+
+/*Esto es para mostrar el submenu cuando el cursor pase por encima del menu*/
+.menu li:hover .subMenu {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.menu li:hover {
+    background-color: rgba(248, 190, 55, 0.836);
+}
+
+/*Grid en todo el main*/
+
+.mainInicio {
+    display: grid;
+    grid-template-areas: "h2 h2 h2"
+                        "video video video"
+                        "img1 img2 img3";
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* media queries MainiInicio Index */
+
+
+@media (max-width: 768px) {
+    .mainInicio {
+        display: block;
+        align-content: center;
+        max-width: 95%;
+        grid-template-columns: 1fr;
+    }
+}
+
+h2 {
+    grid-area: h2;
+    margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+iframe {
+    grid-area: video;
+    border: solid 3px black;
+}
+
+/* media queries iframe index */
+
+@media (max-width: 768px) {
+    iframe {
+        max-width: 96%;
+    }
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    padding: 50px 50px 5px 50px;
+}
+.imagen1 {
+    grid-area: img1;
+    text-align: center;
+}
+
+.imagen2 {
+    grid-area: img2;
+    text-align: center;
+}
+
+.imagen3 {
+    grid-area: img3;
+    text-align: center;
+}
+
+img {
+    width: 60%;
+}
+
+/*Footer Flex*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.918);
+    padding: 10px 0px 10px 20px;
+    margin-top: 30px;
+}
+
+footer div {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    text-align: center;
+}
+
+footer div h6 {
+    font-family: 'Roboto', sans-serif;
+    text-align: start;
+    font-size: 20px;
+} 
+
+/* media queries footer gral */
+
+@media (max-width: 768px) {
+    footer div h6 {
+        text-align: center;
+    }
+}
+
+.socialMedia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.redSocial {
+    width: 25px;
+    margin: 0px 5px;
+    
+}
+
+/*Pagina Nosotros*/
+
+.tituloComision {
+    text-align: center;
+    text-decoration: underline;
+    
+}
+
+.imgComision {
+    width: 50%;
+    border: 3px solid black;
+}
+
+.comisionDirectiva {
+    display: grid;
+    grid-template-areas: "persona1 persona2 persona3"
+                        "persona4 persona5 persona6";
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* media queries nosotros*/
+
+@media (max-width: 768px) {
+    .comisionDirectiva {
+        display: block;
+        align-content: center;
+        max-width: 95%;
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.parrafoNosotros p {
+    padding: 0;
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 30px;
+    text-indent: 30px;
+    line-height: 1.5;
+}
+
+
+.imgSecre {
+    grid-area: persona1;
+    text-align: center;
+}
+
+.imgSubSecre {
+    grid-area: persona2;
+    text-align: center;
+}
+
+.imgTesorero {
+    grid-area: persona3;
+    text-align: center;
+}
+
+.imgActas {
+    grid-area: persona4;
+    text-align: center;
+}
+
+.imgVocal {
+    grid-area: persona5;
+    text-align: center;
+}
+
+.imgAbogado {
+    grid-area: persona6;
+    text-align: center;
+}
+
+/* Servicios */
+
+.serviciosExternos {
+    display:flex ;
+    justify-content: space-around;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.serviciosExternos div {
+    width: 33.3%;
+}
+
+.imgServicios {
+    max-width: 50%;
+    margin: 10px
+}
+
+.parrafoServicios {
+    padding: 0%;
+}
+
+/* media queries servicios */
+@media (max-width: 768px) {
+    .serviciosExternos {
+        display: block;
+    }
+    .serviciosExternos div {
+        width: 100%;
+    }
+}
+
+
+
+/* ---Pagina en mantenimiento-- */
+.mantenimiento {
+    font-size: 50px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.gatito{
+    padding:0px; 
+    margin:0px;
+    border: solid 3px black;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 30%;
+}
+
+/* media queries mantenimiento */
+@media (max-width: 768px) {
+    .mantenimiento {
+        display: block;
+    }
+    .serviciosExternos gatito {
+        width: 100%;
+    }
+}
+/* -------------------------------------------------------------- */
